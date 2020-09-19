@@ -73,7 +73,7 @@ class App extends Component{
 
   progress = () => {
     const{completed} = this.state;
-    this.setState({completed : completed >= 100 ? 0 : completed+1})
+    this.setState({completed : completed >= 100 ? 0 : completed+1});
   }
 
 render(){
@@ -105,16 +105,14 @@ render(){
           job={c.job}
           /> 
         );
-      }) : ""
-    }
-          <TableRow>
-              <TableCell colSpan='6' align="center">
-                <CircularProgress className={classes.progress} variant="determinate" value={this.state.completed}/>
-
-
-              </TableCell>
-          </TableRow>
-      </TableBody>
+      }) : 
+      <TableRow>
+      <TableCell colSpan='6' align="center">
+        <CircularProgress className={classes.progress} variant="determinate" value={this.state.completed}/>
+      </TableCell>
+      </TableRow>
+    }        
+      </TableBody> 
       </Table>
       </Paper>
    
